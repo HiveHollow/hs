@@ -1,0 +1,100 @@
+<html>
+<title>prog</title>
+<body>
+<pre class="">
+<p style="font-family: consolas, monospace; font-style: regular; font-size: 85%;">
+
+&emsp;&emsp; : <a style="font-size:16px">Fundamental</a> <a style="font-size:19px" href="types">Types</a> &emsp; There
+&emsp;&emsp; are three main categories: integral, <a href="robotinternet">floating
+&emsp;&emsp; point</a><a>, and void... &emsp; : C++ &emsp; Summations of memory may be
+&emsp;&emsp; written in the form of: &emsp; enum{state1,}; &emsp; struct{};
+ &emsp;&emsp; This also ties in with Functions(){} In that you can
+&emsp;&emsp; Overload by creating functions of the same name, &emsp; and those function
+&emsp;&emsp; attributes will inherit from prior functions. Some other things are &emsp;
+&emsp;&emsp;&emsp; Functions(Parameters) &nbsp;&nbsp; thing Object &emsp; Object.Attribute &emsp; OutsideDef=Class::Function
+&emsp; [ ]AccessStrings &emsp; Complex Declarators &emsp; Theres alot of
+&emsp;&emsp; hidden features &emsp;      you'll discover <a href="https://en.cppreference.com/w/cpp/11">C++11 versions</a>
+&emsp;&emsp; <a> &emsp; while </a><a href="jello">loop</a><a> &emsp; Learn about the
+&emsp;&emsp; behavior of things &emsp; And how they interact within Scope &emsp; Also,
+&emsp;&emsp; learn what it means to use </a> Casting
+&emsp;&emsp; <a> &emsp; : </a><a href="main">Main</a><a> &emsp; Main() is the entry point
+&emsp;&emsp; of C/C++ application. If you use int main(), &emsp; It will return integer
+&emsp;&emsp; value as return. If you use void main(), &emsp; then this will not return
+&emsp;&emsp; anything. Note that the software &emsp; over which applications execute, has
+&emsp;&emsp; to prepare stack before calling Main(). &emsp; There can be two types of
+&emsp;&emsp; applications: &emsp; 1: Bare board based : Which runs directly on hardware.
+&emsp;&emsp; For example, &emsp; any boot loader such as u-boot. The CPU starts from a
+&emsp;&emsp; reset vector, &emsp; initialize required resources such as RAM, and then
+&emsp;&emsp; jump to Main(). &emsp; In this case generally void main() can be used.
+&emsp;&emsp; &emsp; 2: Operating System based : If the application is &emsp;&emsp; supposed to run
+&emsp;&emsp; on top of &emsp; OS such as Windows,Linux etc. It's the operating system &rsquo;s
+&emsp;&emsp; responsibility to &emsp; create necessary stack or other resources before
+&emsp;&emsp; calling Main(). &emsp; If an application is supposed to return a value or
+&emsp;&emsp; error, then one can use int &emsp; Main(). Generally it will return -1 for
+&emsp;&emsp; error, for example if your &emsp; application failed to acquire required
+&emsp;&emsp; memory or other resources. &emsp; ... See also - what's called "'Words' in
+&emsp;&emsp; computer architecture". &emsp; : How a normal compiler works, Compiling
+&emsp;&emsp; essentially synonymous with Language/Code Generating... &emsp; &mdash;
+&emsp;&emsp; Keywords &emsp; &mdash;&mdash;&mdash;&mdash;&mdash; Identifiers, etc. &emsp;
+&emsp;&emsp; &mdash; Other &emsp; &mdash;&mdash;&mdash;&mdash;&mdash; &emsp; &mdash;
+&emsp;&emsp; Parsing, Abstract Syntax Tree... &emsp; &mdash; Code Gen
+&emsp; : </a><a id="asm-anch"></a>
+&emsp;&emsp; Basic Assembly(ASM)
+<a> &emsp; mov: dest, source &emsp; &emsp;
+&emsp;&emsp; dest&larr;source &emsp; [dest is a register or a memory location]
+&emsp;&emsp; &emsp; [source is a register, a memory location, or immediate]
+&emsp;&emsp; &emsp; [both cannot be a memory location at the same time] &emsp; : </a>
+
+&emsp;&emsp; <a id="cmd-anch"></a>Command Line Essentials<a href="https://ss64.com/">ss64</a>
+&emsp;&emsp; <a> &emsp;&emsp;&emsp;&emsp; You can try: &emsp;&emsp; cd C:\path\to\some\directory -to change the path of the directory
+&emsp;&emsp; You can also try things such as: &emsp;&emsp; cd ../ or cd C:\ &emsp;&emsp;
+&emsp;&emsp; I have a batch file called '4edivate' on my desktop. &emsp;&emsp; It sets
+&emsp;&emsp; the environment, opens 4coder, and then exits the command shell.
+
+&emsp;&emsp; &emsp;&emsp; IF NOT DEFINED vcvars_set (
+&emsp;&emsp; call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
+&emsp;&emsp; set vcvars_set=1
+&emsp;&emsp;&emsp; )
+&emsp;&emsp; "C:\Users\Your Name\Desktop\4coder\4ed.exe" | taskkill -F -IM cmd.exe
+&emsp;&emsp; &mdash; From this point, you should be able to compile, example
+: &emsp;&emsp; @echo off &emsp;&emsp; cl ..\exqueb\source.cpp -MTd exqueb.exe
+&emsp;&emsp; &emsp; : </a><a id="git-anch"></a>Git<a> &emsp; &mdash;&mdash;&mdash;&mdash;&mdash;
+&emsp;&emsp; Instructions for starting github &amp; cmd-line Using SSH. &emsp; &mdash;
+&mdash;&mdash;&mdash;&mdash; You only have to do the ssh key part once. &emsp; &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+&emsp;&emsp; Enter these using cmd: &emsp; &mdash;&mdash;&mdash;&mdash;&mdash; ssh-keygen &emsp; &mdash;&mdash;&mdash;&mdash;&mdash;
+&emsp;&emsp; passphrase "skip this" &emsp; &mdash;&mdash;&mdash;&mdash;&mdash;
+&emsp;&emsp; "Now you have a public/private rda" &emsp; &mdash;&mdash;&mdash;&mdash;
+&mdash; "on Github, Go to Settings to add the SSH Key" &emsp; &mdash;
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; </a>
+&emsp;&emsp; <a href="figure1">figure1</a><a id="bits-anch"></a> &emsp; &mdash;&mdash;
+&mdash;&mdash;&mdash; "cd to your Project's directory" &emsp; &mdash;
+&mdash;&mdash;&mdash;&mdash; git init (initializes Git) &emsp; &mdash;
+&mdash;&mdash;&mdash;&mdash; git add . (has no special meaning in your shell,
+and thus Git adds the &emsp; &mdash;&mdash;&mdash;&mdash;&mdash; entire
+directory recursively. It will include all files as well as &emsp;
+&mdash;&mdash;&mdash;&mdash;&mdash; any that start with a (.)dot.
+Unlike 'git add *', which excludes files &emsp; &mdash;&mdash;&mdash;
+&mdash;&mdash; beginning with (.)dot) &emsp; &mdash;&mdash;&mdash;
+&mdash;&mdash; git commit -m "first commit" (-m means message) &emsp;
+&mdash;&mdash;&mdash;&mdash;&mdash; git branch -M main (-M forces renaming situations) &emsp;
+&mdash;&mdash;&mdash;&mdash;&mdash; git remote add origin git@github.com... &emsp; &mdash;&mdash;&mdash;&mdash;
+&mdash; git push -u origin main (-u flag represents 'upstream')
+&emsp; &mdash;&mdash;&mdash;&mdash;&mdash; ('origin' is considered the remote of the repository.
+&emsp; &mdash;&mdash;&mdash;&mdash;&mdash; main is just the branch connected to origin)
+&emsp; &mdash;&mdash;&mdash;&mdash;&mdash; Example of pushing to git after setup &emsp;
+&mdash;&mdash;&mdash;&mdash;&mdash; "cd to your Project's directory" &emsp;
+&mdash;&mdash;&mdash;&mdash;&mdash; git add . &emsp; &mdash;&mdash;
+&mdash;&mdash;&mdash; git commit -m "yadayada" &emsp; &mdash;&mdash;
+&mdash;&mdash;&mdash; git push -u origin main &emsp;
+<em>&mdash;For further information: <a href="https://www.w3schools.com/GIT/default.asp">GIT w3schools</a></em> &emsp; <em>&mdash; Ignore select files/folders <a href="https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files">.gitignore</a></em>
+&emsp; <em>&mdash; Wildcard &amp; Patsubst Quick Reference: <a href="wildsubst">View Page</a></em>
+&emsp; —* /* |* \* —* 02/02/2022:       <a style="font-size:30px" href="synopsis">return</a>           <a style="font-size:24px" href="tower"></a></p>
+
+<div style="text-align: center;">
+<p style="font-family: consolas, monospace; font-style: bold; font-size: 130%;">&emsp;&emsp;&emsp;Tabla Content</p>
+</div>
+<p style="font-family: consolas, monospace; font-style: regular; font-size: 85%; text-align: center;">&emsp; : <a href="#c++-anch">C++</a> &emsp; : <a href="#asm-anch">Basic Assembly</a> &emsp; : <a href="#main-anch">Main</a> &emsp; : <a href="#cmd-anch">Command Line Essentials</a> &emsp; : <a href="#git-anch">Git</a> &emsp; : <a href="utility">Utility Reference</a></p>
+
+</pre>
+</body>
+</html>

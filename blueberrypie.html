@@ -1,0 +1,66 @@
+<title>Blueberry Pie</title>
+
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:85%;">
+&emsp;&emsp; So if  the body {}   is the main event, then main() is like the hand mixer.
+        Variables must be Declared and Initialized.
+        Initialization can be Explicit [assigned a value] or
+        Implicit [assigned a value during the process]
+
+
+
+&emsp;      /* Example 1 */ <em>[In this example we use referenced variables]</em>
+
+
+
+&emsp;&emsp; int ingredient;
+&emsp;&emsp; void function(int &var);
+
+
+&emsp;&emsp; int main()
+&emsp;&emsp;     {
+&emsp;&emsp;         ingredient = 3;
+
+&emsp;&emsp;         function(ingredient);
+&emsp;&emsp;         return 0;
+&emsp;&emsp;     }
+    
+&emsp;&emsp; void function(int &var)
+&emsp;&emsp;     {
+&emsp;&emsp;         cout << "equals " << var << "\n";
+
+&emsp;&emsp;         ingredient = ingredient + 4;
+&emsp;&emsp;         cout << "equals " << var << "\n";
+&emsp;&emsp;         ingredient = 5;
+&emsp;&emsp;         cout << "equals " << var << "\n";
+&emsp;&emsp;         ingredient = ingredient - 1;
+&emsp;&emsp;         cout << "equals " << var << "\n";
+&emsp;&emsp;     }
+
+
+
+&emsp;      /* Example 2 */ <em>[lvalue and rvalue]</em>
+
+
+
+&emsp;&emsp; #define local static // <em>words like 'object' and 'static' can be misinterpreted,
+                        so replace them in a macro</em>
+
+&emsp;&emsp; int &v() { // an lvalue reference
+&emsp;&emsp;   local int v = 3;
+&emsp;&emsp;   return v;
+&emsp;&emsp; }
+
+&emsp;&emsp; int main() {
+&emsp;&emsp;   int i = v(); // v 'return's a temporary value(no location or storage), an rvalue
+&emsp;&emsp;   // int i is an lvalue
+&emsp;&emsp;   v() = 4; // an lvalue reference, is now returned
+  
+&emsp;&emsp;   cout << v();
+&emsp;&emsp;   cout << i;
+  
+&emsp;&emsp;   return 0;
+}
+
+</pre>
+</p><p style="font-family: consolas, monospace; font-style:regular; font-size:140%;">&emsp; <a href="jello">jello</a></font> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="integers">integers</a></font>

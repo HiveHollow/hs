@@ -1,0 +1,34 @@
+<title>DIB</title>
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:98%;">
+
+<!-- o -->
+&emsp; And lastly...
+
+&emsp; DIB stands for Device Independent <a href="encoding">Bitmap</a>.
+
+&emsp; A DIB contains a color table. A color table describes how pixel values correspond
+&emsp; to RGB color values, which describe colors that are produced by emitting light.
+
+&emsp; A DIB consists of two distinct parts: a BITMAPINFO structure describing the
+&emsp; dimensions and colors of the bitmap, and an array of bytes defining the
+&emsp; pixels of the bitmap. The bits in the array are packed together, but
+&emsp; each scan line must be padded with zeros to end on a LONG data-type boundary.
+&emsp; If the height of the bitmap is positive, the bitmap is a bottom-up DIB
+&emsp; and its origin is the lower-left corner.
+&emsp; If the height is negative, the bitmap is a top-down DIB
+&emsp; and its origin is the upper left corner.
+&emsp; It is used in such a way, as in:
+&emsp; CreateDIBSection which creates a DIB that applications can write to directly.
+&emsp; The function gives you a pointer to the location of the bitmap bit values.
+&emsp; It requires parameters such as: a handle, a pointer to a BITMAPINFO,
+&emsp; its RGB use case, the [out] ppvBits(pointer to a variable that receives
+&emsp; a pointer to the location of the DIB bit values), and etc, etc. And that
+&emsp; is that for a bitmap and its utilization.
+<img src="https://i.imgur.com/N2AgXJd.png" title="about bitmaps" usemap="#la" alt="" /><map name="la"><area shape="circle" coords="535,470,40" alt="test1" href="color"></map>
+<p style="font-family: consolas, monospace; font-style:regular; font-size:170%;">&emsp;&emsp;&emsp;&emsp; <a href="granprixel">granprixel</a> \go back</font></p>
+<br>
+<br>
+
+</pre>
+</p>

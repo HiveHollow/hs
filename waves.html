@@ -1,0 +1,196 @@
+<title>waves</title>
+
+waves
+<br>
+<!-- break; -->
+FOR theta = 0 TO 4 * 3.1415 STEP .004
+xt = SIN(theta * 10) * 230 + 320
+yt = COS(theta * 9.5) * 200 + 240
+nthet = xt / 30 + yt / 30
+yp = yt + SIN(nthet) * 20
+xp = xt + COS(nthet) * 20
+LINE -(xp, yp)
+NEXT theta
+<!-- break; -->
+
+DECLARE SUB prscr ()
+CONST pi = 3.14159
+SCREEN 11
+
+FOR theta = 0 TO 12 * pi STEP .05
+rad = COS(thaeta) * SIN(theta / 3) * SIN(theta / 2) * 80 * (3 + COS(theta * 6.333))
+xp = 320 + rad * COS(theta)
+yp = 240 + rad * SIN(theta)
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl1
+NEXT theta
+GOSUB wkey
+fl1:
+
+
+CLS : a% = 0
+FOR theta = 0 TO 2 * pi STEP .015
+rad = -(.5 * SIN(5 * theta)) * (.5 * COS(4 * theta)) * 1000
+angle = theta + SIN(rad / 100)
+xp = 320 + rad * COS(angle)
+yp = 240 + rad * SIN(angle)
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl2
+NEXT theta
+GOSUB wkey
+fl2:
+
+CLS : a% = 0
+FOR theta = 0 TO 4 * 3.1415 STEP .04
+rad = (1.05 + SIN(theta * 4.5)) * 100
+angle = theta - COS(theta * 10) / 10
+xp = 320 + rad * COS(angle)
+yp = 240 + rad * SIN(angle)
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl3
+NEXT theta
+GOSUB wkey
+fl3:
+
+CLS : a% = 0
+FOR theta = 0 TO 4 * 3.1415 STEP .02
+xp = 320 + SIN(theta * 5) * 200
+yp = 240 + COS(theta * 5.5) * 200
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl4
+NEXT theta
+GOSUB wkey
+fl4:
+
+
+CLS : a% = 0
+FOR theta = 0 TO 2 * 3.1415 STEP .02
+xp = 320 + SIN(theta * 5) * COS(theta * 6) * 200
+yp = 240 + COS(theta * 5.5) * SIN(theta * 6.5) * 200
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl5
+NEXT theta
+GOSUB wkey
+fl5:
+
+
+
+CLS : a% = 0
+FOR theta = 0 TO 4 * 3.1415 STEP .004
+xp = EXP(SIN(theta * 10)) * 230 - 30
+t = EXP(COS(theta * 9.5)) * 180 - 30
+yp = t + SIN(xp / 20) * 20
+xp = xp + SIN(t / 20) * 20
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl6
+NEXT theta
+GOSUB wkey
+fl6:
+
+
+CLS : a% = 0
+FOR theta = 0 TO 4 * 3.1415 STEP .004
+xt = SIN(theta * 10) * 230 + 320
+yt = COS(theta * 9.5) * 200 + 240
+nthet = xt / 30 + yt / 30
+yp = yt + SIN(nthet) * 20
+xp = xt + COS(nthet) * 20
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl7
+NEXT theta
+GOSUB wkey
+fl7:
+
+
+CLS : a% = 0
+FOR theta = 0 TO 160 STEP .06
+xt = SIN(theta) * theta * 2 + 320
+yt = COS(theta) * theta * 2 + 240
+nthet = xt / 30 + yt / 30
+othet = xt / 30 - yt / 30
+yp = yt + SIN(nthet) * 15 + SIN(othet) * 15
+xp = xt + COS(nthet) * 15 + COS(othet) * 15
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl9
+NEXT theta
+GOSUB wkey
+fl9:
+
+
+CLS : a% = 0
+FOR theta = 0 TO 40 * pi STEP .04
+rad = (1.4 + SIN(theta * 3.05)) * 110
+xt = SIN(theta) * rad + 320
+yt = COS(theta) * rad + 240
+nthet = xt / 20
+othet = yt / 20
+yp = yt + SIN(nthet) * 15
+xp = xt + COS(othet) * 15
+IF a% THEN
+   LINE -(xp, yp)
+ELSE
+   a% = 1: PSET (xp, yp)
+END IF
+IF INKEY$ <> "" THEN GOTO fl10
+NEXT theta
+fl10:
+END
+
+
+wkey:
+   a$ = INKEY$
+   DO: a$ = INKEY$: LOOP WHILE a$ = ""
+   IF a$ = "p" THEN prscr
+RETURN
+
+SUB prscr
+DEFINT A-Z
+DIM a(1000)
+OPEN "prn" FOR OUTPUT AS #1
+PRINT #1, CHR$(27); CHR$(51); CHR$(24);
+FOR col = 10 TO 79
+   GET (col * 8, 0)-(col * 8 + 8, 480), a
+   pr$ = ""
+   FOR x = 480 TO 2 STEP -1
+      pr$ = pr$ + CHR$(a(x) AND 255)
+   NEXT x
+   le = LEN(pr$)
+   PRINT #1, CHR$(27); "L" + CHR$(le AND 255); CHR$((le AND -256) \ 256);
+   PRINT #1, pr$
+   thenn! = TIMER + 2.5
+   WHILE TIMER < thenn!: WEND
+NEXT col
+CLOSE #1
+END SUB

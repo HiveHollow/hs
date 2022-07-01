@@ -1,0 +1,95 @@
+<title>Jello</title>
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:85%;">
+&emsp; : What does Math represent in programming?
+
+&emsp;&emsp; To me, Math makes me think of buying Jello <a href="types">Pudding</a> for myself...
+&emsp;&emsp; I bring it home, then I unpack the Jello construction kit, or whatever it is.
+&emsp;&emsp; I follow the simple rules on the box, and presto Jello.
+&emsp;&emsp; I might even divide parts of the Jello into little cubicles,
+&emsp;&emsp; in preparation for a fellow person to experience the Jello-tasting with me.
+&emsp;&emsp; I add complicated flavors together, tropical might be the right term.
+&emsp;&emsp; So in this way, it is alot like the rules of a program, as well as the
+&emsp;&emsp; tropical ingredients found within.
+&emsp;&emsp; You can essentially go wild with whatever inside of a program.
+&emsp;&emsp; Just take note of the rules that govern such a process.
+&emsp;&emsp; The return type or resolution will give us some type of value.
+
+&emsp;&emsp; Math in bitwise operations would represent the position of a
+&emsp;&emsp; 1 or 0 in binary number associated with the given integer.
+
+&emsp;&emsp; Math in regular operations... Well, just look at the examples.
+
+
+
+&emsp;      /* Example 1 */
+
+
+
+&emsp; int main()
+&emsp; {
+&emsp;     int b = 0;
+    
+&emsp;     while(b <= 5)
+&emsp;     {
+&emsp;         b = b + 2;
+        
+&emsp;         cout << "b is " << b << endl;
+&emsp;     }
+&emsp;     return 0;
+&emsp; }
+
+
+&emsp; The console comes out as:
+
+&emsp; b is 2
+&emsp; b is 4
+&emsp; b is 6
+
+&emsp; Anything in the body is iterated upon, such would a Forloop(;;)
+&emsp; There are "3" times that b is less than or equal to 5...
+&emsp; The first time is when b started at 0... Then, it added 2 to itself.
+&emsp; The second time is when b started at 2... Then, it added 2 to itself.
+&emsp; The third time is when b started at 4... Then, it added 2 to itself.
+
+&emsp; It doesnt matter what the result goes by, it matters what b 'went' by, or 'while' b went by.
+
+&emsp; Where a line of code is in a program matters. Play around. It will modify the codes behavior.
+
+&emsp; Move "cout << ..." one line down, between the last two brackets.
+&emsp; Now the priority of cout is diminished. We are only exposed to when "b started at 4, then added 2 to itself".
+
+
+
+&emsp;      /* Example 2 */ <em>[This is a really great example to play with]</em>
+
+
+
+&emsp; int factor(int F); // decl
+
+&emsp; int main() {
+  &emsp; int F, ans;
+  &emsp; ans = factor(3);
+  &emsp; cout << "Answer is: " << ans << " and ";
+  &emsp; cout << "Answer is: " << F ;
+  &emsp; }
+	
+&emsp; int factor(int F) { // maps integer to another integer
+  &emsp; int ans = 3;
+  &emsp; for(int i = 2; i <= F; i++)	{
+  &emsp;   ans = i * 2;
+  &emsp;   cout << "Answer is: " << ans << endl;
+  &emsp;   cout << "Answer is: " << F << endl;
+  &emsp; }
+  
+  &emsp; return ans;
+&emsp; }
+
+
+&emsp; The cout operations printed out of main are shown last.
+&emsp; 'i' is less than 2 two times, so it does the other cout operations
+&emsp;  two times. Anytime 'i' is less than 2... ans equals i * 2.
+
+
+</pre>
+</p><p style="font-family: consolas, monospace; font-style:regular; font-size:140%;">&emsp; <a href="types">Pudding</a></font> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="blueberrypie">BlueberryPie</a></font>

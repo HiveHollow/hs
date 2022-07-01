@@ -1,0 +1,17 @@
+<title>stride</title>
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:98%;">
+&emsp;    Stride /or Pitch as they sometimes call it,
+&emsp;    is the number of bytes from one row of pixels
+&emsp;    in memory to the next row of pixels in memory.
+
+&emsp;    Image format defines a minimum stride for an image.
+&emsp;    For uncompressed RGB formats, the minimum stride is
+&emsp;    always the image width in bytes rounded up to the
+&emsp;    nearest DWORD(32bit unsigned integer).
+&emsp;    Here's a formula for calculating stride:
+
+&emsp;     = ((((biWidth * biBitCount) + 31) & ~31) >> 3)
+
+</pre>
+</p>

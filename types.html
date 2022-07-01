@@ -1,0 +1,77 @@
+<title>types</title>
+
+
+
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:85%;">
+&emsp; : Types
+
+&emsp;&emsp;&emsp; To me, emphasis draws on the 'body' of a function of some kind, like
+&emsp;&emsp;&emsp; mixing pudding for a dessert, and the main event is the pudding.
+&emsp;&emsp;&emsp; Anything extra on top we might consider the 'type'. You add in types,
+&emsp;&emsp;&emsp; like jimmies and cream and cherries and they float around as you stir the mix.
+
+
+&emsp;&emsp;&emsp; Pudding(){}
+
+&emsp;&emsp;&emsp; Type Pudding Tag = {}
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; { // <em>a comment -- all about pudding</em> }
+
+
+&emsp;&emsp;&emsp; Do you want cherries in the flavor range of zero and 4 billion?
+&emsp;&emsp;&emsp; Maybe you want something small like jimmies in the range of -128 to 127.
+&emsp;&emsp;&emsp; We can manipulate things inside the bowl of pudding, and they will
+&emsp;&emsp;&emsp; map to/behave corresponding with virtual memory...
+&emsp;&emsp;&emsp; What if theres two bowls of pudding?
+&emsp;&emsp;&emsp; It may require us to utilize one of the extra c++ rules that allows for
+&emsp;&emsp;&emsp; transfering a topping found in one pudding, to another - but just enough -
+&emsp;&emsp;&emsp; we can absolute mix and match puddings; As the more interesting programs
+&emsp;&emsp;&emsp; usually have multiple 'puddings'.
+
+<!-- ------------------------break; -->
+&emsp;&emsp;&emsp; Within a function, 'void' is another type.
+&emsp;&emsp;&emsp; It does not return a value after it executes.
+&emsp;&emsp;&emsp; When it's used for a function's parameter list,
+&emsp;&emsp;&emsp; it specifies that the function takes no parameters.
+&emsp;&emsp;&emsp; When used in the declaration of a pointer (a void *pointer),
+&emsp;&emsp;&emsp; it specifies that the pointer is universal.
+<!-- ------------------------break; -->
+&emsp;&emsp;&emsp; You cannot declare a variable as void.
+&emsp;&emsp;&emsp; A void *pointer can't be dereferenced unless it's cast to another type. <!-- ------------------------break; -->
+
+&emsp;&emsp;&emsp; Here is a detailed interpretation...
+&emsp;&emsp;&emsp; The Unary indirection operator (*) dereferences a pointer; that is,
+&emsp;&emsp;&emsp; it converts a pointer value to an l-value.
+
+&emsp;&emsp;&emsp; The operand of the indirection operator must be a pointer to a
+&emsp;&emsp;&emsp; type. The result of the indirection expression is the same type
+&emsp;&emsp;&emsp; as the pointer's type. In this context, you can distinguish
+&emsp;&emsp;&emsp; the use of the (*) operator as Unary, versus its meaning
+&emsp;&emsp;&emsp; through binary operation, multiplication.
+
+&emsp;&emsp;&emsp; If the operand points to a function, the result is a function designator.
+&emsp;&emsp;&emsp;&emsp; func(a,b); // <em>func is the designator</em>
+&emsp;&emsp;&emsp; If it points to a storage location, the result is an l-value designating
+&emsp;&emsp;&emsp; the storage location (and I give an example with lvalue\rvalue later on).
+&emsp;&emsp;&emsp; The indirection operator may be used cumulatively to dereference (ptr to ptr).
+
+&emsp;&emsp;&emsp;&emsp; int main() {
+&emsp;&emsp;&emsp;&emsp;    int n = 5;
+&emsp;&emsp;&emsp;&emsp;    int *pn = &n;
+&emsp;&emsp;&emsp;&emsp;    int **ppn = &pn;
+
+&emsp;&emsp;&emsp;&emsp;    cout  << "Value of n:\n"
+&emsp;&emsp;&emsp;&emsp;          << "direct value: " << n << endl
+&emsp;&emsp;&emsp;&emsp;          << "indirect value: " << *pn << endl
+&emsp;&emsp;&emsp;&emsp;          << "doubly indirect value: " << **ppn << endl
+&emsp;&emsp;&emsp;&emsp;          << "address of n: " << pn << endl
+&emsp;&emsp;&emsp;&emsp;          << "address of n via indirection: " << *ppn << endl;
+&emsp;&emsp;&emsp;&emsp; }
+
+<br>
+<br>
+
+
+</pre>
+</p><p style="font-family: consolas, monospace; font-style:regular; font-size:140%;">&emsp;&emsp;<a href="prog">return</a></font> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="jello">jello</a></font>

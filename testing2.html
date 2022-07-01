@@ -1,0 +1,160 @@
+<title>testing2a1</title>
+<div style="text-align: center;">
+<p style="font-size:34px">2A1</p>
+&emsp; [Under Construction]</div>
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:85%;">
+
+&emsp; <b>Name</b> 
+&emsp; Names denote Variables. There are three kinds of Names: identifiers, operators, and conversions.
+&emsp; Names are extensional: two Names are the same if they have the same attributes and named relationships,
+&emsp; and they are immutable once created.
+
+&emsp; <b>Identifier</b> 
+&emsp; An Identifier is a Name consisting of a nonempty sequence of source characters.
+
+&emsp; <b>Operator</b> 
+&emsp; An OperatorName is a Name consisting of the keyword operator followed by one of the overloadable operators.
+
+&emsp; <b>ConversionName</b>
+&emsp; A ConversionName is a Name consisting of the keyword operator followed by a Type.
+
+&emsp; <b>Scope</b>
+&emsp; A Scope ("declarative region") is a set of Variables. Name lookup searches for a Name
+&emsp; amongst a certain sequence of Scopes, yielding the set of Variables that have the given Name.
+&emsp; There are rules that restrict the set of Variables that may have the same Name and Scope; the data model itself does not enforce them.
+
+&emsp; The Standard's notion of the "potential scope of a variable" is induced by the timing of the sequence
+&emsp; of updates to Scopes corresponding to processing declarations. I have chosen not to include an
+&emsp; explicit notion of time or point of declaration in this data model, but I may reconsider.
+&emsp; (Currently missing from data model: function scopes, which contain the labels for goto statements.)
+
+&emsp; <b>Namespace</b>
+&emsp; A Namespace is a scope outside any class or function. They include the GlobalScope. Namespaces can be connected by UsingDirectives.
+
+&emsp; <b>BlockScope</b>
+&emsp; A BlockScope ("local scope") contains local variables in a function. FunctionDefinitions include a BlockScope that spans their body.
+
+&emsp; <b>PrototypeScope</b>
+&emsp; A PrototypeScope contains the parameters of a function declarator that is not the declarator of a function definition.
+
+&emsp; <b>ClassType</b> (as a Scope)
+&emsp; A ClassType includes the scope that contains the class members. It is described further in another entry below.
+
+&emsp; <b>Variable</b>
+&emsp; A Variable (a mixture of Standard concepts "entity" and "declaration") is something that can be found by lookup.
+&emsp; Every Variable is a member of exactly one Scope.
+&emsp; A Variable's name is both optional and mutable.
+&emsp; It is optional because function and template parameters may be declared without names.
+&emsp; It is mutable because subsequent declarations may add or change a name.
+&emsp; Variables without names are not subject to the rules of that restrict same-named Variables in a Scope.
+
+&emsp; <b>NamespaceAlias</b>
+&emsp; A NamespaceAlias provides an alternate name for a Namespace.
+
+&emsp; <b>Function</b>
+&emsp; A Function (Variable) is a unique name for a FunctionDefinition, which is a fragment of executable AST.
+&emsp; A Function may or may not have a definition, and that aspect may change during processing of a translation unit.
+
+&emsp; <b>Enumerator</b>
+&emsp; An Enumerator is one of the elements of an Enumeration.
+
+&emsp; <b>UsingAlias</b>
+&emsp; A UsingAlias is introduced by a using-declaration. When a lookup finds a UsingAlias, it transparently follows the "target" field.
+
+&emsp; <b>DataVariable</b>
+&emsp; A DataVariable denotes a piece of named run-time data. It can have any type other than a FunctionType (or void).
+
+&emsp; DataVariables are partitioned:
+    &emsp; — LocalVariable: Appears in a BlockScope, denotes a variable local to a function. LocalVariables may have an initializer Expression;
+    &emsp;&emsp;&emsp; this is relevant to static semantics only if the variable is also const.
+    &emsp; — GlobalVariable: Appears in a Namespace, denotes a variable visible to all functions (modulo namespace visibility).
+    &emsp; — FunctionParameter: Appears in a BlockScope (for FunctionDefinitions) or a PrototypeScope, denotes a function parameter.
+    (TODO: Hmmm. How are ProtoypeScopes related to FunctionTypes and FunctionDefinitions?) A FunctionParameter may have a default value expression.
+    &emsp; — DataMember: Appears in a ClassType scope, denotes a data member of a class (or struct or union).
+    &emsp;&emsp;&emsp; These are further subdivided into static and nonstatic members, the former of which may have an initializer.
+    &emsp; — HandlerParam: Appears in a BlockScope, denotes the variable bound to an exception object in an exception handler. 
+
+&emsp; <b>ClassMember</b>
+&emsp; A ClassMember is any Variable other than an Enumerator that is a member of a ClassType Scope.
+&emsp; Such Variables have an "access" attribute that is public, protected or private.
+&emsp; The access attribute of an Enumerator in a ClassType Scope can be determined by examining its type.
+
+&emsp; <b>ImplicitlyDeclaredMemberFunction</b>
+&emsp; An ImplicitlyDeclaredMemberFunction is a constructor, destructor or copy assignment operator that is implicitly declared.
+
+&emsp; <b>TypeName</b>
+&emsp; A TypeName names a type for purposes of lookup.
+
+&emsp; <b>Typedef</b>
+&emsp; A Typedef is a type name in a scope, introduced via the typedef keyword.
+
+&emsp; <b>InjectedClassName</b>
+&emsp; An InjectedClassName is an alias for a ClassType within the scope of that ClassType.
+
+&emsp; <b>NamedAtomicType</b>
+&emsp; A NamedAtomicType is both a TypeName and an AtomicType. That is, it can be found by lookup,
+&emsp; and it can be used to form constructed ("compound") types and be cv-qualified.
+
+&emsp; <b>ClassType</b>
+&emsp; A ClassType is a class or struct or union; the "keyword" field distinguishes these.
+&emsp; It has a sequence of base classes, each of which has an "access" specifier and may be virtual.
+&emsp; It may also have a ClassDefinition, which is an AST fragment. The presence of a ClassDefinition distinguishes forward declarations,
+&emsp; and is also useful for implementing templates.
+
+&emsp; A ClassType has a set of constructors and a destructor. They are found by direct examination of the ClassType, not by lookup,
+&emsp; because they do not have names. The data model allows both to be missing to accomodate the analysis of the class itself,
+&emsp; which does not know in advance how to make them.
+
+&emsp; <b>Enumeration</b>
+&emsp; An Enumeration is a type consisting of a set of named constants, called enumerators.
+
+&emsp; <b>Type</b>
+&emsp; A Type is an entity or concept that is used within the static semantics to approximate the dynamic semantics.
+&emsp; In the data model here, "Type" denotes those types constructed by applying type constructors and/or cv-qualifiers
+&emsp; to other Types or AtomicTypes. Types are extensional: two Types are equivalent if they have the same structure (attributes and relationships),
+&emsp; and they are immutable once created.
+
+&emsp; <b>FunctionType</b>
+&emsp; A FunctionType is the type of a function. It has a return type, parameters, and an optional exception specification.
+&emsp; Parameter types are equivalent if they have the same cv-unqualified type; that is, the name and the top-level cv-qualification
+&emsp; of parameter types are not significant for type equivalence.
+
+&emsp; <b>MethodType</b>
+&emsp; The type of a nonstatic member function, what I call a method, is a FunctionType that has a receiver parameter.
+&emsp; The receiver is always a reference to a (possibly cv-qualified) class type; the cv-qualification of the receiver
+&emsp; records the cv-qualification of the member function declarator.
+
+&emsp; <b>DataType</b>
+&emsp; A DataType is a Type that is not a FunctionType. Note that the related Standard term "object type" does not include references or void.
+
+&emsp; <b>CVAtomicType</b>
+&emsp; A CVAtomicType is a leaf in a Type tree. It refers to an AtomicType, and possibly cv-qualifies it.
+
+&emsp; <b>IndirectionType</b>
+&emsp; IndirectionType is the common ancestor for the types that are constructed primarily from one other type.
+
+&emsp; <b>PointerType</b>
+&emsp; A PointerType is the type of a pointer to some other type, possibly with cv-qualification.
+&emsp; The cv-qualifiers apply to the pointer itself, not the referent (the type pointed to).
+
+&emsp; <b>PointerToMemberType</b>
+&emsp; A PointerToMemberType is the type of a pointer to a nonstatic class member. In addition to cv-qualifiers,
+&emsp; it names the class of which the referent is a member.
+
+&emsp; <b>ReferenceType</b>
+&emsp; A ReferenceType is the type of a reference to some other type. It cannot be cv-qualified.
+
+&emsp; <b>ArrayType</b>
+&emsp; An ArrayType is the type of an array. It does not (necessarily) have a known size.
+
+&emsp; <b>SizedArrayType</b>
+&emsp; A SizedArrayType is the type of an array with known size.
+
+&emsp; <b>AtomicType</b>
+&emsp; An AtomicType is a type which is not built from type constructors. Their identity is physical, not structural:
+&emsp; two AtomicTypes can be different even when they have the same attributes and relationships. 
+</p>
+</pre>
+<p style="font-family: consolas, monospace; font-style:regular; font-size:164%;">
+<!--    <a href="tower"> next </a></font> -->

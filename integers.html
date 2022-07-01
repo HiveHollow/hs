@@ -1,0 +1,40 @@
+<title>integers</title>
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:85%;">
+
+&emsp;&emsp; 4 bytes is stored for each  int
+
+
+
+
+&emsp; int main()
+&emsp; {
+&emsp;     int arr[0];
+&emsp;     int *x = &arr[0];
+&emsp;     int *y = &arr[1];
+&emsp;     int *z = &arr[2];
+    
+&emsp;     cout << "x is " << x << endl;
+&emsp;     cout << "y is " << y << endl;
+&emsp;     cout << "z is " << z << endl;
+    
+&emsp;     x = x + 2;
+&emsp;     cout << "x is " << x << endl;
+
+&emsp;     return 0;
+&emsp; }
+
+
+&emsp; The console comes out as:
+
+&emsp; x is 0x7ffd46dde2c4
+&emsp; y is 0x7ffd46dde2c8
+&emsp; z is 0x7ffd46dde2cc
+&emsp; x is 0x7ffd46dde2cc
+
+&emsp; Shown in the last print out, x was two elements away
+&emsp; in the array, the same virtual address as z.
+
+</pre>
+</p><p style="font-family: consolas, monospace; font-style:regular; font-size:140%;">&emsp; <a href="blueberrypie">BlueberryPie</a></font> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="struct">struct</a></font>
+</p>

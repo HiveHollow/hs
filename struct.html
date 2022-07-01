@@ -1,0 +1,92 @@
+<title>struct</title>
+<pre class="">
+<p style="font-family: consolas, monospace; font-style:regular; font-size:85%;">
+
+&emsp; For a moment lets go back to basics with something simple.
+&emsp; Structures are so simple as to how they work and what they do.
+
+
+&emsp; struct structure {
+  &emsp; string A;
+  &emsp; string B;
+&emsp; };
+
+&emsp; int main() {
+  &emsp; structure myStruct1;
+  &emsp; myStruct1.A = "100X";
+  &emsp; myStruct1.B = "200X";
+  
+  &emsp; structure myStruct2;
+  &emsp; myStruct2.A = "Lowest";
+  &emsp; myStruct2.B = "Highest";
+  
+  &emsp; return 0;
+&emsp; }
+
+
+
+/* testenum */ |* \* —* /* |* \* —*
+
+
+
+&emsp; enum spweage {
+&emsp;   nam, nom, neb,
+&emsp; };
+
+&emsp; int main() {
+&emsp; cout << nom;
+&emsp; return 0;
+&emsp; }
+
+
+
+&emsp; /* testunion */ |* \* —* /* |* \* —*
+
+
+
+&emsp; struct v2 {
+&emsp;   float x, y;
+&emsp; };
+
+&emsp; struct v4 {
+&emsp;   union { // anonymous union
+  
+&emsp;     struct { // anonymous struct
+    
+&emsp;       float x, y, z, w;
+      
+&emsp;     };
+&emsp;     struct { // anonymous struct
+    
+&emsp;       v2 a, b;
+      
+&emsp;     };
+&emsp;   };
+&emsp; };
+
+&emsp; void vec_ptwo(const v2 &vector) {
+&emsp;   cout << vector.x << " , " << vector.y << endl;
+&emsp; }
+
+&emsp; int main() {
+&emsp;   v4 vector = {1.0f, 2.0f, 3.0f, 4.0f};
+&emsp;   vec_ptwo(vector.a);
+&emsp;   vec_ptwo(vector.b);
+&emsp;   vector.z = 11.0f;
+&emsp;   cout << endl;
+&emsp;   vec_ptwo(vector.a);
+&emsp;   vec_ptwo(vector.b);
+&emsp;   cout << vector.z << endl;
+&emsp;   cout << vector.b.x << endl;
+  
+&emsp;   return 0;
+&emsp; }
+
+&emsp; // z corresponds to b.x   occupies the same place in memory
+
+<!-- Things that i found irrelevant or too simple i purposely never explain... -->
+
+
+</pre>
+</p><p style="font-family: consolas, monospace; font-style:regular; font-size:140%;">&emsp; <a href="integers">integers</a></font> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="granprixel">granprixel</a></font>
+</p>
